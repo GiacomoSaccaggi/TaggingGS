@@ -4,11 +4,11 @@
 > Currently TaggingGS is an beta version
 
 How to install TaggingGS from GIT:
-- ***pip install --upgrade https://github.com/jkbr/httpie/tarball/master***
+- ***pip install --upgrade https://github.com/GiacomoSaccaggi/TaggingGS***
 
 or
  
-- ***pip install git+https://github.com/jkbr/httpie.git#egg=httpie***
+- ***pip install git+https://github.com/GiacomoSaccaggi/TaggingGS.git#egg=httpie***
 
 
 
