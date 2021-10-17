@@ -213,7 +213,7 @@ def _all_analyzes(**kwargs):
 		except Exception as e:
 			print(e)
 			return 0, ['no analysis found'], ['no analysis found'], \
-				['no analysis found'], ['no analysis found'], ['no analysis found']
+				['no analysis found'], ['no analysis found'], ['no analysis found'], ['no analysis found']
 
 
 def _export_analysis(analysis_token: 'analysis token', **kwargs):
