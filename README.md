@@ -25,13 +25,13 @@ How to install TaggingGS with clone folder:
 
 
 	
-2. Define Knowledge Base as pandas.DataFrame or import demo_kb:
+2. Create flask app:
 
 	<code>>>> app = run_tagging_app()</code>
 
 
 
-3. Model creation:
+3. Run flask app:
 
 	<code>>>> app.run(port=8080)</code>
 
