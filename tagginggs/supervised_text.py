@@ -56,7 +56,7 @@ class SpacyEmbeddingModel(object):
                     pass
             if nlp == 'not find':
                 try:
-                    subprocess.call(f'python -m spacy download {lan}_core_news_{dict_size}')
+                    subprocess.call(f'python -m spacy download {lan}_core_news_{dict_size}', shell=True)
                     nlp = spacy.load(f'{lan}_core_news_{dict_size}')
                 except Exception as e:
                     if nlp != 'not find':
@@ -64,7 +64,7 @@ class SpacyEmbeddingModel(object):
                     pass
             if nlp == 'not find':
                 try:
-                    subprocess.call(f'python -m spacy download {lan}_core_web_{dict_size}')
+                    subprocess.call(f'python -m spacy download {lan}_core_web_{dict_size}', shell=True)
                     nlp = spacy.load(f'{lan}_core_web_{dict_size}')
                 except Exception as e:
                     if nlp != 'not find':
