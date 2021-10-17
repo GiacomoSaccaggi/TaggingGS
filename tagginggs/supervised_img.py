@@ -64,7 +64,7 @@ def easy_net(to_tag, tagged, analysis_token):
             filename = f'{folder_from}/{k.replace("upload_tmp/", "")}'
             with open(filename, 'wb') as f:
                 f.write(imgdata)
-            immagini.append(filename)
+            immagini.append(k.replace("upload_tmp/", ""))
 
     base_model = VGG16(weights="imagenet")
     model = Model(inputs=base_model.inputs, outputs=base_model.layers[-2].output)

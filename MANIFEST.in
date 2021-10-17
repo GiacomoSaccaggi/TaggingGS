@@ -4,6 +4,7 @@ include tagginggs/analyzes.html
 include tagginggs/explore.html
 include tagginggs/load_page.html
 include tagginggs/tag_page.html
+include tagginggs/models.html
 include tagginggs/__init__.py
 include tagginggs/TaggingGS_basefun.py
 include tagginggs/supervised_text.py
