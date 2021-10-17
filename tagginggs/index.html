@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Tagging GS</title>
+        <link rel="icon" href="Static/tag_main.png" type="image/x-icon" >
+        <meta charset="UTF-8">
+        <!-- <meta http-equiv="refresh" content="30"> -->
+        <meta name="author" content="Giacomo Saccaggi">
+        <meta name="description" content="Jack Tagging: fast tagging.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+          body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+          body {
+            color: hsla(215, 5%, 50%, 1);
+          }
+          h1 {
+            color: hsla(215, 5%, 10%, 1);
+            margin-bottom: 2rem;
+          }
+          section {
+            display: flex;
+            flex-flow: row wrap;
+          }
+          section > div {
+            flex: 1;
+            padding: 0.5rem;
+          }
+          input[type="radio"] {
+            display: none;
+            &:not(:disabled) ~ label {
+              cursor: pointer;
+            }
+            &:disabled ~ label {
+              color: hsla(150, 5%, 75%, 1);
+              border-color: hsla(150, 5%, 75%, 1);
+              box-shadow: none;
+              cursor: not-allowed;
+            }
+          }
+          label {
+            height: 100%;
+            display: block;
+            background: white;
+            border: 2px solid hsla(150, 75%, 50%, 1);
+            border-radius: 20px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            //margin: 1rem;
+            text-align: center;
+            box-shadow: 0px 3px 10px -2px hsla(150, 5%, 65%, 0.5);
+            position: relative;
+          }
+          input[type="radio"]:checked + label {
+            background: hsla(150, 75%, 50%, 1);
+            color: hsla(215, 0%, 100%, 1);
+            box-shadow: 0px 0px 20px hsla(150, 100%, 50%, 0.75);
+            &::after {
+              color: hsla(215, 5%, 25%, 1);
+              font-family: FontAwesome;
+              border: 2px solid hsla(150, 75%, 45%, 1);
+              content: "\f00c";
+              font-size: 24px;
+              position: absolute;
+              top: -25px;
+              left: 50%;
+              transform: translateX(-50%);
+              height: 50px;
+              width: 50px;
+              line-height: 50px;
+              text-align: center;
+              border-radius: 50%;
+              background: white;
+              box-shadow: 0px 2px 5px -2px hsla(0, 0%, 0%, 0.25);
+            }
+          }
+          input[type="radio"]#control_05:checked + label {
+            background: red;
+            border-color: red;
+          }
+          p {
+            font-weight: 900;
+          }
+
+
+          @media only screen and (max-width: 700px) {
+            section {
+              flex-direction: column;
+            }
+          }
+        </style>
+    </head>
+  <body class="w3-light-grey w3-content" style="max-width:1600px">
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+      <div class="w3-container">
+        <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
+          <i class="fa fa-remove"></i>
+        </a>
+        <img src="Static/tag_main.png" style="width:45%;" class="w3-round"><br><br>
+        <h4><b>MENU</b></h4>
+        <p class="w3-text-grey">{{subtitle}}</p>
+      </div>
+      <div class="w3-bar-block">
+        {%for i in range(0, menu_len)%}
+          <a href="{{ menu_link[i] | safe }}" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa {{ menu_symbol[i] | safe }} fa-fw w3-margin-right"></i>{{ menu_name[i] | safe }}</a>
+        {% endfor %}
+      </div>
+    </nav>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:300px">
+
+      <!-- Header -->
+      <header id="MENU">
+        <a href="#"><img src="Static/tag_main.png" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+        <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+        <div class="w3-container w3-bottombar w3-padding-16">
+        <h1><b>{{title}}</b></h1>
+        </div>
+      </header>
+
+
+    <div class="w3-container w3-padding-large" style="margin-bottom:32px">
+        <h4><b>{{info_text}}</b></h4>
+        <br><hr><br>
+
+
+
+
+
+
+    </div>
+        <footer class="w3-container w3-padding-32 w3-dark-grey">
+      <div class="w3-row-padding">
+        <div class="w3-third">
+          <h3>FOOTER</h3>
+          <p>{{footer}}</p>
+        </div>
+      </div>
+      </footer>
+
+      <div class="w3-black w3-center w3-padding-24">Powered by {{powered_by}}</div>
+
+    </div>
+    <script>
+      // Script to open and close sidebar
+      function w3_open() {
+          document.getElementById("mySidebar").style.display = "block";
+          document.getElementById("myOverlay").style.display = "block";
+      }
+
+      function w3_close() {
+          document.getElementById("mySidebar").style.display = "none";
+          document.getElementById("myOverlay").style.display = "none";
+      }
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,12 @@
+include tagginggs/Static/tag_main.png
+include tagginggs/index.html
+include tagginggs/analyzes.html
+include tagginggs/explore.html
+include tagginggs/load_page.html
+include tagginggs/tag_page.html
+include tagginggs/__init__.py
+include tagginggs/TaggingGS_basefun.py
+include tagginggs/supervised_text.py
+include tagginggs/supervised_img.py
+include tagginggs/unsupervised_text.py
+include tagginggs/unsupervised_img.py
