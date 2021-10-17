@@ -183,7 +183,7 @@
         }
       }
 
-      function Supervised_and_Wait(token) {
+      function Supervised_and_Wait(token, tagging_type) {
         if (tagging_type == 'img') {
             window.open('/supervised?token='+token)
             alert('We are training the models. Wait until an end of process message appears. This procedure can take up to several hours')
