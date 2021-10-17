@@ -4,7 +4,7 @@
 > Currently TaggingGS is an beta version
 
 How to install TaggingGS from ZIP file:
-- ***pip install --upgrade https://github.com/GiacomoSaccaggi/TaggingGS/archive/refs/heads/main.zip***
+- ***pip install https://github.com/GiacomoSaccaggi/TaggingGS/archive/refs/heads/main.zip***
 
 How to install TaggingGS from GIT:
  
