@@ -35,12 +35,3 @@ How to install TaggingGS with clone folder:
 
 	<code>>>> app.run(port=8080)</code>
 
-
-
-
-
-> Run app in container:
-
-1. Install Docker app
-2. Download zip docker and extract
-3. Run on shell <code>docker_push_and_run.ps1</code>
