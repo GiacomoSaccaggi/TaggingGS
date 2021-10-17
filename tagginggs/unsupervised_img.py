@@ -56,7 +56,7 @@ def clustering_images(to_tag, analysis_token, **kwargs):
     from tensorflow.keras.preprocessing.image import ImageDataGenerator
     from tensorflow.keras import losses
     path = os.path.abspath(__file__)
-    dir_path = os.path.dirname(path) + '\\Uploads'
+    dir_path = os.path.dirname(path) + '/Uploads'
     folder_from = f'{dir_path}/{analysis_token}/img_unsupervised'
     folder_to = f'{dir_path}/{analysis_token}/unsupervised'
     with open(f'{dir_path}/{analysis_token}/metadata.json', 'r', encoding='utf8') as f:

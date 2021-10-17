@@ -48,7 +48,7 @@ def easy_net(to_tag, tagged, analysis_token):
     import json
     import os
     path = os.path.abspath(__file__)
-    dir_path = os.path.dirname(path) + '\\Uploads'
+    dir_path = os.path.dirname(path) + '/Uploads'
     folder_from = f'{dir_path}/{analysis_token}/img_supervised'
     folder_to = f'{dir_path}/{analysis_token}/supervised'
     with open(f'{dir_path}/{analysis_token}/metadata.json', 'r', encoding='utf8') as f:

@@ -19,7 +19,7 @@ class SpacyEmbeddingModel(object):
         self.nlp, self.stop_words = self._select_language(lan, 'md')
         self.analysis_token = analysis_token
         path = os.path.abspath(__file__)
-        dir_path = os.path.dirname(path) + '\\Uploads'
+        dir_path = os.path.dirname(path) + '/Uploads'
         self.folder_to = f'{dir_path}/{self.analysis_token}/supervised'
         try:
             os.mkdir(self.folder_to)

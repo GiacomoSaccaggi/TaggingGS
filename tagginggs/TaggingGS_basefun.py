@@ -115,7 +115,7 @@ def _load_tag_files(analysis_token: 'analysis token'):
 	import json
 	import os
 	path = os.path.abspath(__file__)
-	dir_path = os.path.dirname(path) + '\\Uploads'
+	dir_path = os.path.dirname(path) + '/Uploads'
 	with open(f'{dir_path}/{analysis_token}/to_tag.pkl', 'rb') as f:
 		to_tag = pickle.load(f)
 	with open(f'{dir_path}/{analysis_token}/tagged.pkl', 'rb') as f:
@@ -129,7 +129,7 @@ def _add_tagged(analysis_token: 'analysis token'):
 	import json
 	import os
 	path = os.path.abspath(__file__)
-	dir_path = os.path.dirname(path) + '\\Uploads'
+	dir_path = os.path.dirname(path) + '/Uploads'
 	with open(f'{dir_path}/{analysis_token}/metadata.json', 'r', encoding='utf8') as f:
 		metadata = json.load(f)
 	metadata['tot_tagged'] = int(metadata['tot_tagged']) + 1
@@ -141,7 +141,7 @@ def _save_file_pkl(input_obj: 'obj binary', name: 'file name', analysis_token: '
 	import pickle
 	import os
 	path = os.path.abspath(__file__)
-	dir_path = os.path.dirname(path) + '\\Uploads'
+	dir_path = os.path.dirname(path) + '/Uploads'
 	try:
 		os.mkdir(dir_path)
 	except FileExistsError:
@@ -162,7 +162,7 @@ def _save_file_json(input_obj: dict, name: 'file name', analysis_token: 'analysi
 	import json
 	import os
 	path = os.path.abspath(__file__)
-	dir_path = os.path.dirname(path) + '\\Uploads'
+	dir_path = os.path.dirname(path) + '/Uploads'
 	try:
 		os.mkdir(dir_path)
 	except FileExistsError:
@@ -184,11 +184,11 @@ def _all_analyzes(**kwargs):
 	import shutil
 	import os
 	path = os.path.abspath(__file__)
-	dir_path = os.path.dirname(path) + '\\Uploads'
+	dir_path = os.path.dirname(path) + '/Uploads'
 	if 'delete' in kwargs.keys():
-		shutil.rmtree(f'{dir_path}\\{kwargs["delete"]}')
+		shutil.rmtree(f'{dir_path}/{kwargs["delete"]}')
 	if 'deletemodel' in kwargs.keys():
-		shutil.rmtree(f'{dir_path}\\{kwargs["deletemodel"]}\\{kwargs["tipo"]}')
+		shutil.rmtree(f'{dir_path}/{kwargs["deletemodel"]}/{kwargs["tipo"]}')
 	if 'stop' not in kwargs.keys() or kwargs["stop"] != 'y':
 		try:
 			analyzes_folder = os.listdir(dir_path)
@@ -224,10 +224,10 @@ def _export_analysis(analysis_token: 'analysis token', **kwargs):
 	import json
 	import os
 	path = os.path.abspath(__file__)
-	dir_path = os.path.dirname(path) + '\\Uploads'
+	dir_path = os.path.dirname(path) + '/Uploads'
 
 	if 'tipo' in kwargs.keys():
-		folder_path = f'{dir_path}\\{analysis_token}\\{kwargs["tipo"]}'
+		folder_path = f'{dir_path}/{analysis_token}/{kwargs["tipo"]}'
 		with tarfile.open(folder_path + ".tgz", "w:gz") as tar:
 			for subfolder in os.listdir(folder_path):
 				tar.add(f'{folder_path}/{subfolder}', arcname=subfolder)
@@ -281,5 +281,5 @@ def _remove_analysis():
 def _exist_in_analysis(analysis_token: 'analysis_token', folder: str):
 	import os
 	path = os.path.abspath(__file__)
-	dir_path = os.path.dirname(path) + '\\Uploads'
+	dir_path = os.path.dirname(path) + '/Uploads'
 	return folder in os.listdir(f'{dir_path}/{analysis_token}')
