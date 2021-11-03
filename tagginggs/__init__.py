@@ -335,7 +335,7 @@ def run_tagging_app():
     def supervised_by_token():
         from .TaggingGS_basefun import _load_tag_files, _exist_in_analysis, _all_analyzes
         print(request.args)
-        tipo = 'unsupervised'
+        tipo = 'supervised'
         comment = ''
         token = request.args["token"]
         to_tag, tagged, tagging_type, categorie = _load_tag_files(token)
