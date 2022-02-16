@@ -11,7 +11,7 @@ setup(name='tagginggs',
       packages=find_packages(),
       include_package_data=True,
       install_requires=[
-            'Flask~=2.0.2', 'Pillow~=8.3.2', 'tensorflow', 'scikit-learn~=1.0', 'matplotlib~=3.4.3', 'tqdm~=4.62.3', 'numpy~=1.19.5', 'flask_httpauth~=4.4.0','gunicorn~=20.1.0','spacy~=3.1.3'
+            'Flask', 'Pillow', 'tensorflow', 'scikit-learn', 'matplotlib', 'tqdm', 'numpy', 'flask_httpauth','gunicorn','spacy'
       ],
       zip_safe=False
       )
