@@ -314,7 +314,7 @@ def run_tagging_app():
                           'Then perform a Fine Tuning through Transfer Learning.'
             else:
                 from unsupervised_text import LDAText
-                lan = request.args["lan"].lower()
+                lan = str(request.args["lan"].lower())[:2]
                 model = LDAText(lan=lan, analysis_token=token)
                 if "classes" in request.args.keys():
                     model.train_lda(to_tag=to_tag, classes=request.args["classes"])
