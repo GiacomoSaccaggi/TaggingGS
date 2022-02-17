@@ -230,7 +230,7 @@ class LDAText(object):
         from sklearn.decomposition import LatentDirichletAllocation
         texts = list(to_tag.values())
         texts_mod = [' '.join(self.__extract_words(i)) for i in texts]
-        tfidf = TfidfVectorizer(max_features=5000, strip_accents='unicode', lowercase=True)
+        tfidf = TfidfVectorizer(max_features=5000, strip_accents='unicode', lowercase=True, min_df=0.02, max_df=0.97)
         x_transf = tfidf.fit_transform(texts_mod)
         n_topics = 0
         if 'classes' in kwargs.keys():
