@@ -305,7 +305,7 @@ def run_tagging_app():
             _all_analyzes(deletemodel=token, tipo=tipo, stop='y')
         if not _exist_in_analysis(token, tipo):
             if tagging_type == 'img':
-                from unsupervised_img import clustering_images
+                from .unsupervised_img import clustering_images
                 if "classes" in request.args.keys():
                     clustering_images(to_tag=to_tag, analysis_token=token, classes=request.args["classes"])
                 else:
@@ -313,7 +313,7 @@ def run_tagging_app():
                 comment = 'The model used to divide the clusters is a K-means starting from a pre-trained VGG16. ' \
                           'Then perform a Fine Tuning through Transfer Learning.'
             else:
-                from unsupervised_text import LDAText
+                from .unsupervised_text import LDAText
                 lan = str(request.args["lan"].lower())[:2]
                 model = LDAText(lan=lan, analysis_token=token)
                 if "classes" in request.args.keys():
@@ -343,11 +343,11 @@ def run_tagging_app():
             _all_analyzes(deletemodel=token, tipo=tipo, stop='y')
         if not _exist_in_analysis(token, tipo):
             if tagging_type == 'img':
-                from supervised_img import easy_net
+                from .supervised_img import easy_net
                 easy_net(to_tag=to_tag, tagged=tagged, analysis_token=token)
                 comment = 'The model used a pre-trained VGG16 with a Fine Tuning performed through Transfer Learning.'
             else:
-                from supervised_text import SpacyEmbeddingModel
+                from .supervised_text import SpacyEmbeddingModel
                 lan = request.args["lan"].lower()
                 model = SpacyEmbeddingModel(lan=lan, analysis_token=token)
                 model.training(to_tag=to_tag, tagged=tagged, categorie=categorie)
