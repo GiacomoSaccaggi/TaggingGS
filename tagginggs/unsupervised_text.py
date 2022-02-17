@@ -238,7 +238,7 @@ class LDAText(object):
             lda = LatentDirichletAllocation(n_components=n_topics, max_iter=200, verbose=False)
             lda.fit_transform(x_transf)
         else:
-            tolleranza_modello = int(len(texts_mod)*0.15)
+            tolleranza_modello =  int(len(texts_mod)*0.15) if len(len(texts_mod)) < 66 else 10
 
             # Metodo per determinare il numero ottimale dei topic della LatentDirichletAllocation
             def classify_(text):
