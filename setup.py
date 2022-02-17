@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 # pdoc -o ./html GSTag
 setup(name='tagginggs',
-      version='0.1.4',
+      version='0.1.5',
       description='Easily Tag',
       url='',
       author='Saccaggi Giacomo',
