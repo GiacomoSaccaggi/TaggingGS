@@ -1,5 +1,6 @@
 Copyright (c) 2021 The Python Packaging Authority
 
+-- en
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -17,3 +18,23 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+-- it
+Si concede il permesso, gratuitamente, a chiunque ottenga una copia di questo
+software e dei file di documentazione associati (il "Software"), di trattare
+il Software senza restrizioni, inclusi senza limitazione i diritti di utilizzare,
+copiare, modificare, unire , pubblicare, distribuire, concedere in sublicenza e/o
+vendere copie del Software e consentire alle persone a cui viene fornito il Software
+di farlo, alle condizioni seguenti:
+
+L'avviso di copyright di cui sopra e questo avviso di autorizzazione devono
+essere inclusi in tutte le copie o parti sostanziali del Software.
+
+IL SOFTWARE VIENE FORNITO "COSÌ COM'È", SENZA ALCUN TIPO DI GARANZIA, ESPRESSA
+O IMPLICITA, INCLUSE, A TITOLO ESEMPLIFICATIVO, LE GARANZIE DI COMMERCIABILITÀ,
+IDONEITÀ PER UNO SCOPO PARTICOLARE E NON VIOLAZIONE. IN NESSUN CASO
+GLI AUTORI O I TITOLARI DEL COPYRIGHT SARANNO RESPONSABILI DI QUALSIASI RECLAMO,
+DANNO O ALTRA RESPONSABILITÀ, SIA IN UN'AZIONE CONTRATTUALE, ILLECITO O ALTRO,
+DERIVANTE DA, DERIVANTE DA O IN COLLEGAMENTO CON IL SOFTWARE O L'UTILIZZO O 
+ALTRE CONTRATTI NEL SOFTWARE.
